@@ -16,8 +16,9 @@ def addUrl():
 
 
 def runUrl():
-    for url in url_and_name.items():
+    for name, url in url_and_name.items():
         # can try to make the website go up by just typing name but, redundancy.
+        print(name, "\t", url)
         webb.open(url, new=0)
 
 canvas = tk.Canvas(root, height=200, width=700, bg="#336B87")
