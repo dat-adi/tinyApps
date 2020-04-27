@@ -1,5 +1,5 @@
 # YTsearch
-###### Pre-requisite: Python installed<br>
+###### Pre-requisite: Python 3.0 or higher installed<br>
 
 A small application that searches through YouTube, and gives back the search results in a browser.<br>
 It can run instantly after giving it a search query, and has two different modes of processing the search queries.
