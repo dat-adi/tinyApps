@@ -14,4 +14,4 @@ Using pickle module as a save file for your urls.
 
 ## YTsearch
 
-A program that acts as a simple search through Youtube, opens up a webpage, if not already open, and opens up the search results.
+A program that acts as a simple search through Youtube, opens up a webpage in the browser, if not already open, and gives you the search results.
