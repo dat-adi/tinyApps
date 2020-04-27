@@ -11,3 +11,7 @@ The app has been derived from an online tutorial, <a href="https://www.youtube.c
 
 A program that allows you to store urls to your favourite sites, launch all of them, at a click of a button, instead of wasting your time on manually opening them yourself.
 Using pickle module as a save file for your urls.
+
+## YTsearch
+
+A program that acts as a simple search through Youtube, opens up a webpage, if not already open, and opens up the search results.
