@@ -3,6 +3,7 @@ import tkinter as tk
 import os
 import pickle
 
+op = webb.get('opera')
 url_and_name = {}
 
 if os.path.isfile("tabs"):
@@ -27,7 +28,11 @@ def runUrl():
     for name, url in url_and_name.items():
         # can try to make the website go up by just typing the name but, redundancy.
         print(name, "\t", url)
-        webb.open(url, new=0)
+        op.open(url, new=0)
+
+def delUrl():
+    to_delete = input("Enter the name of the website to delete : ")
+    del url_and_name[to_delete]
 
 canvas = tk.Canvas(root, height=200, width=700, bg="#336B87")
 canvas.pack()
@@ -35,11 +40,17 @@ canvas.pack()
 frame = tk.Frame(canvas, bg="#2A3132")
 frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)
 
+top_bar = tk.Label(root, text="oneSpotTabs", bg="#2A3132", fg="White")
+top_bar.pack(fill=tk.X)
+
 urlInput = tk.Button(root, text="Add Website", padx=10, pady=5, command=addUrl)
-urlInput.pack(side=tk.LEFT)
+urlInput.pack(side=tk.RIGHT)
 
 urlExecute = tk.Button(root, text="Run links", padx=10, pady=5, command=runUrl)
 urlExecute.pack(side=tk.RIGHT)
+
+urlDelete = tk.Button(root, text="Delete link", padx=10, pady=5, command=delUrl)
+urlDelete.pack(side=tk.RIGHT)
 
 root.mainloop()
 
