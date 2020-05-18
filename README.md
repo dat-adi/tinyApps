@@ -1,6 +1,5 @@
 # tinyApps
----
-A collection of small python applications which I have been working on.
+Tiny programs which can help you keyboard ninjas.
 
 ## Index
 1. [OneSpotApp](#onespotapp)
