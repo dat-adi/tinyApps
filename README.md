@@ -1,14 +1,19 @@
 # tinyApps
 Tiny programs which can help you keyboard ninjas.
 
-## Available Apps
+## Index
+### Available Apps
 1. [OneSpotApp](#onespotapp)
 2. [OneSpotTabs](#onespottabs)
 3. [YTsearch](#ytsearch)
 
-## Yet to be Added
+### Yet to be Added
 4. [OneSpotCrack](#onespotcrack)
 5. [ContentCrawler](#content-crawler)
+
+### Miscellaneous
+- [License](#license)<br>
+- [Contributing](#contributing)
 
 ## Installation
 
@@ -38,3 +43,13 @@ Yet to be completed, a work in progress, trying to use the API provided.
 
 Essentially, a program that insteads to crawl websites and display the content you require, allowing you to download it as well.
 Currently a work in progress, this project was built to crawl webnovel websites for their webnovels.
+
+## License
+This project is hosted under the MIT license, and is free to be distributed and shared.
+
+## Contributing
+Feel free to contribute to this project, but, be sure to <br>
+- [ ] Open up an issue stating the problem/feature to be alerted of.
+- [ ] Fork the repository and work on the issue.
+- [ ] Send a pull request after finishing up on the code.
+- [ ] The code will be reviewed and if all's good, merged into the master branch.
