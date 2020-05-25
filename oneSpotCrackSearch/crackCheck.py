@@ -1,14 +1,17 @@
 import requests
 import json
 import urllib
-from time import sleep
 import sys
+import requests_cache
 
+requests_cache.install_cache('cache')
 def Crack_checker(link,title):
     try:
         url = urllib.request.urlopen(link)
     except:
-        print("CONNECTION ERROR! RETRY AFTER SOME TIME.")
+        print("CONNECTION ERROR : 500 INTERNAL SERVER ERROR")
+        input("Enter any key to exit ")
+        sys.exit(0)
     data = json.loads(url.read())
     strdata = str(data)
     if(strdata!="[]"):
@@ -18,8 +21,7 @@ def Crack_checker(link,title):
             return False
     else:
         print("Game is not cracked")
-        print("Exhausted Search Results")
-        sleep(20)
+        input("Enter any key to exit ")
         sys.exit(0)
 
 game = input(str("Enter the name of the game you want to check for : "))
