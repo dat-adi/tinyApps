@@ -5,7 +5,10 @@ from time import sleep
 import sys
 
 def Crack_checker(link,title):
-    url = urllib.request.urlopen(link)
+    try:
+        url = urllib.request.urlopen(link)
+    except:
+        print("CONNECTION ERROR! RETRY AFTER SOME TIME.")
     data = json.loads(url.read())
     strdata = str(data)
     if(strdata!="[]"):
@@ -15,6 +18,7 @@ def Crack_checker(link,title):
             return False
     else:
         print("Game is not cracked")
+        print("Exhausted Search Results")
         sleep(20)
         sys.exit(0)
 
@@ -25,3 +29,4 @@ for i in range(600):
     if(Crack_checker(url,game)):
         print("Game is Cracked")
         break
+input("Press any key to exit ")
