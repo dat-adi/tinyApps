@@ -18,6 +18,10 @@ Tiny programs which can help you keyboard ninjas.
 ## Installation
 
 You can have the tinyApps too!
+To install tinyApps onto your device, you can download one of the releases [here](https://github.com/dat-adi/tinyApps/releases), or download the zip file through the clone feature, else, clone it using the command below.
+```shell
+git clone https://github.com/dat-adi/tinyApps.git
+```
 
 ## OneSpotApp
 
