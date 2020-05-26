@@ -40,8 +40,9 @@ A program that acts as a simple search through Youtube, opens up a webpage in th
 
 ## OneSpotCrack
 
-A program that checks whether or not a specific game is cracked or not, fed from the info from [Crack Watch](https://crackwatch.com/games).
-Yet to be completed, a work in progress, trying to use the API provided.
+A program that checks whether or not a specific game is cracked or not, fed from the info from [Crack Watch](https://crackwatch.com/games).<br>
+Yet to be completed, a work in progress, trying to use the [API](https://crackwatch.com/api) provided.
+For more info on OneSpotCrack, click [here](https://github.com/dat-adi/tinyApps/blob/master/oneSpotCrackSearch/README.md).
 
 ## Content Crawler
 
