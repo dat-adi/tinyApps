@@ -10,6 +10,7 @@ Tiny programs which can help you keyboard ninjas.
 ### Yet to be Added
 4. [OneSpotCrack](#onespotcrack)
 5. [ContentCrawler](#content-crawler)
+6. [Dataset Parser](#dataset-parser)
 
 ### Miscellaneous
 - [License](#license)<br>
@@ -48,6 +49,10 @@ For more info on OneSpotCrack, click [here](https://github.com/dat-adi/tinyApps/
 
 Essentially, a program that insteads to crawl websites and display the content you require, allowing you to download it as well.
 Currently a work in progress, this project was built to crawl webnovel websites for their webnovels.
+
+## Dataset Parser
+
+A collection of programs that aim to build up a dataset instead of manually entering data into the dataset, to instead build the database by parsing through the folder in order to collect the properties of each object in the folder.
 
 ## License
 This project is hosted under the MIT license, and is free to be distributed and shared.
