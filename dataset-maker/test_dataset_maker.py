@@ -6,13 +6,11 @@ from csv import writer, DictWriter
 def file_indexer(dir_path):
     print(listdir(dir_path))
     with open('temp.csv', 'w', newline='') as f:
-        wtr = DictWriter(f)
+        fieldnames=["File Name", "Extension", "Size"]
+        wtr = DictWriter(f, fieldnames=fieldnames)
         for one_file in listdir(dir_path):
-            print(one_file)
             file_name = dir_path + '\\' + one_file
-            print(getsize(file_name))
-            print(splitext(file_name)[1])
-            wtr.writerow({"File Name" : file_name, "Extension" : splitext(file_name), "Size" : getsize(file_name)})
+            wtr.writerow({"File Name" : one_file, "Extension" : splitext(file_name)[1], "Size" : getsize(file_name)})
 
 
 if __name__ == "__main__":
