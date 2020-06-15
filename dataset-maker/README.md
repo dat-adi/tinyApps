@@ -14,4 +14,16 @@ As of right now, the dataset parser identifies the following filetypes, feel fre
 - [x] EXE
 - [x] Java, Python, C, C++, JS
 
- 
+```shell
+D:\tinyApps\dataset-maker>python dataset_parser.py
+Enter the path to the directory: D:\Learning\ImageProcessing\images
+Enter the path to extract the csv to: D:\tinyApps\dataset-maker
+Enter the name of the csv file( without extension ): trial_images
+Indexing...
+Folder:  D:\Learning\ImageProcessing\images
+Output Path:  D:\tinyApps\dataset-maker
+File Name:  trial_images.csv
+Directories present in the folder are :  []
+``` 
+
+As you can see, the only input required from the user is the folder path, output path, and the name of the .csv file they wish to create.
