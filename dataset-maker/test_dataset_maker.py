@@ -5,8 +5,16 @@ from csv import writer, DictWriter
 
 def file_indexer(dir_path):
     with open('temp.csv', 'w', newline='') as f:
-        fieldnames=["File Name", "Extension", "Size"]
+        fieldnames=["File Name", "Extension", "Size", "Path"]
         wtr = DictWriter(f, fieldnames=fieldnames)
+        wtr.writerow(
+            {
+                "File Name": "File Name",
+                "Extension": "Extension",
+                "Size": "Size",
+                "Path": "Path"
+            }
+        )
         for one_file in listdir(dir_path):
             file_name = dir_path + '\\' + one_file
             wtr.writerow(
