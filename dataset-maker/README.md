@@ -34,5 +34,5 @@ The program shows you the directories present in the folder as well after the ex
 ## Output CSV
 
 <a align="center">
-    <img src="./assets/csv_image.png" alt="csv image">
+    <img src="./assets/csv_image.PNG" alt="CSV image">
 </a>
