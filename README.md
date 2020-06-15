@@ -3,14 +3,15 @@ Tiny programs which can help you keyboard ninjas.
 
 ## Index
 ### Available Apps
-1. [OneSpotApp](#onespotapp)
-2. [OneSpotTabs](#onespottabs)
-3. [YTsearch](#ytsearch)
+
+1. [Dataset Maker](#dataset-maker)
+2. [OneSpotApp](#onespotapp)
+3. [OneSpotTabs](#onespottabs)
+4. [YTsearch](#ytsearch)
 
 ### Yet to be Added
-4. [OneSpotCrack](#onespotcrack)
-5. [ContentCrawler](#content-crawler)
-6. [Dataset Parser](#dataset-parser)
+5. [OneSpotCrack](#onespotcrack)
+6. [ContentCrawler](#content-crawler)
 
 ### Miscellaneous
 - [License](#license)<br>
@@ -24,10 +25,17 @@ To install tinyApps onto your device, you can download one of the releases [here
 git clone https://github.com/dat-adi/tinyApps.git
 ```
 
+## DSMkr
+
+A collection of programs that aim to build up a dataset instead of manually entering data into the dataset, to instead build the database by parsing through the folder in order to collect the properties of each object in the folder.
+
+Link to the usage of the Dataset Maker is [here](dataset-maker/README.md).
+
 ## OneSpotApp
 
 Essentially, a program which stores the location of the programs and runs them all at one click, the program also has a save.txt which ensures that you have the apps saved and don't need to configure them everytime you start the computer.
 'save.txt' contains the paths to the files.
+
 The app has been derived from an online tutorial, <a href="https://www.youtube.com/watch?v=jE-SpRI3K5g">Building a Python GUI</a>.
 
 ## OneSpotTabs
@@ -50,10 +58,6 @@ For more info on OneSpotCrack, click [here](https://github.com/dat-adi/tinyApps/
 Essentially, a program that insteads to crawl websites and display the content you require, allowing you to download it as well.
 Currently a work in progress, this project was built to crawl webnovel websites for their webnovels.
 
-## Dataset Parser
-
-A collection of programs that aim to build up a dataset instead of manually entering data into the dataset, to instead build the database by parsing through the folder in order to collect the properties of each object in the folder.
-
 ## License
 This project is hosted under the MIT license, and is free to be distributed and shared.
 
@@ -63,3 +67,6 @@ Feel free to contribute to this project, but, be sure to <br>
 - [ ] Fork the repository and work on the issue.
 - [ ] Send a pull request after finishing up on the code.
 - [ ] The code will be reviewed and if all's good, merged into the master branch.
+
+---
+<p align="right"><i>dat-adi</i></p>
