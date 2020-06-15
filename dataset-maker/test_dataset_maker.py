@@ -3,8 +3,8 @@ from os.path import getsize, splitext
 from csv import writer, DictWriter
 
 
-def file_indexer(dir_path):
-    with open('temp.csv', 'w', newline='') as f:
+def file_indexer(dir_path, output_path_and_name):
+    with open(output_path_and_name, 'w', newline='') as f:
         fieldnames=["File Name", "Extension", "File Type", "Size", "Path"]
         wtr = DictWriter(f, fieldnames=fieldnames)
         wtr.writerow(
@@ -21,6 +21,8 @@ def file_indexer(dir_path):
         text_extension_list = ['.txt', '.md', '.html']
         style_extension_list = ['.css', '.scss']
         code_extension_list = ['.py', '.java', '.c', '.cpp', '.js']
+        media_extension_list = ['.mp3', '.mp4']
+        application_extension_list = ['.exe']
 
         for one_file in listdir(dir_path):
 
@@ -35,6 +37,12 @@ def file_indexer(dir_path):
                 file_type = 'style'
             elif splitext(file_name)[1] in code_extension_list:
                 file_type = 'programming'
+            elif splitext(file_name)[1] in media_extension_list:
+                file_type = 'media'
+            elif splitext(file_name)[1] in application_extension_list:
+                file_type = 'application'
+            else:
+                file_type = 'unknown'
 
             if getsize(file_name) != 0:
                 wtr.writerow(
@@ -53,6 +61,10 @@ def file_indexer(dir_path):
 
 if __name__ == "__main__":
     directory_path = input("Enter the path to the directory: ")
+    output_path = input("Enter the path to extract the csv to: ")
+    csv_file_name = input("Enter the name of the csv file( without extension ): ") + '.csv'
     print("Indexing...")
     print("Folder: ", directory_path)
-    file_indexer(directory_path)
+    print("Output Path: ", output_path)
+    print("File Name: ", csv_file_name)
+    file_indexer(directory_path, output_path + '\\' + csv_file_name)
