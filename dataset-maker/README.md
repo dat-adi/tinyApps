@@ -15,6 +15,8 @@ As of right now, the dataset maker identifies the following filetypes, feel free
 - [x] EXE
 - [x] Java, Python, C, C++, JS
 
+## Execution of the program
+Below is the execution of the program, in the command prompt.
 ```
 D:\tinyApps\dataset-maker>python dataset_maker.py
 Enter the path to the directory: D:\Learning\ImageProcessing\images
