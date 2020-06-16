@@ -18,13 +18,13 @@ def update(link):
         input("Press any key to exit ")
         sys.exit(0)
 
-date = open("assets/LastUpdatedOn.txt","r")
+date = open("./assets/LastUpdatedOn.txt","r")
 DateAndTime = date.read()
 if(len(DateAndTime)!=0):
     print("Last Updated On " + DateAndTime)
 date.close()
 
-page = open("assets/LastPage.txt","r")
+page = open("./assets/LastPage.txt","r")
 pageNo = page.read()
 if(len(pageNo)!=0):
     startAt = int(pageNo) + 1

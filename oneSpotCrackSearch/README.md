@@ -1,5 +1,7 @@
 # OneSpotCrack
 
+<img src="./assets/cw_logo.png">
+
 ## The way it works
 The CrackCheck.py is a program that concentrates on parsing information from the website [CrackWatch](https://crackwatch.com/?ref=57955)'s API.<br>
 Since the API provided the information for the games avaliable in JSON format, we tried utilizing the *requests*, and the *json* module to parse it.
@@ -29,3 +31,9 @@ but, the API still responds with an Internal server error.<br>
 I've sent a bug report to the CrackWatch admins, and it will be checked soon.
 
 The build currently fails, but, as soon as the issue with the API is patched up, CrackCheck.py will be worked upon.
+
+## 17/06/2020 Update
+The admins at CrackWatch have responded back and are working on the issue as of right now, the program as well has been optimized quite a bit, leaning into the factor of storing the data when we get it rather than trying to retrieve it all at once.
+
+The API service seems to fail infrequently, and as such is given in the Try and Except, in the program.
+Feel free to utilize it anyway.
