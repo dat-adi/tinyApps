@@ -1,5 +1,5 @@
 def Crack_checker(title):
-    file = open("oneSpotCrackSearch/assets/Data.txt","r")
+    file = open("assets/Data.txt","r")
     data = file.read()
     if (data.find(title) != -1):
         return True
