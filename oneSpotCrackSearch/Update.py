@@ -27,14 +27,14 @@ date.close()
 page = open("assets/LastPage.txt","r")
 pageNo = page.read()
 if(len(pageNo)!=0):
-    startAt = pageNo + 1
+    startAt = int(pageNo) + 1
 else:
     startAt = 0
 page.close()
 
 print("Update Process Started...\nThis might take a while. We will notify you once it is done.")
 lastUpdatedTill = 0
-for i in range(int(startAt),600):
+for i in range(startAt,600):
     i = str(i)
     url = ("https://api.crackwatch.com/api/games?&is_cracked=true&page="+i)
     update(url)
