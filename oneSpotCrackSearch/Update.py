@@ -21,7 +21,7 @@ if(len(DateAndTime)!=0):
 date.close()
 
 print("Update Process Started...\nThis might take a while. We will notify you once it is done.")
-for i in range(1):
+for i in range(500):
     i = str(i)
     url = ("https://api.crackwatch.com/api/games?&is_cracked=true&page="+i)
     update(url)
