@@ -1,9 +1,7 @@
 from json import loads
 from urllib.request import urlopen
 from sys import exit as Exit
-from requests_cache import install_cache
 
-requests_cache.install_cache('cache')
 def Crack_checker(link,title):
     try:
         url = urlopen(link)
