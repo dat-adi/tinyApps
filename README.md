@@ -8,7 +8,7 @@ Tiny programs which can help you keyboard ninjas.
 2. [OneSpotApp](#onespotapp)
 3. [OneSpotTabs](#onespottabs)
 4. [YTsearch](#ytsearch)
-5. [OneSpotCrack](#onespotcrack)
+5. [Crack Checker](#crack-checker)
 
 ### Yet to be Added
 6. [ContentCrawler](#content-crawler)
@@ -48,11 +48,11 @@ Using pickle module as a save file for your urls.
 
 A program that acts as a simple search through Youtube, opens up a webpage in the browser, if not already open, and gives you the search results.
 
-## OneSpotCrack
+## Crack Checker
 
 A program that checks whether or not a specific game is cracked or not, fed from the info from [Crack Watch](https://crackwatch.com/games).<br>
 Yet to be completed, a work in progress, trying to use the [API](https://crackwatch.com/api) provided.
-For more info on OneSpotCrack, click [here](./oneSpotCrackSearch/README.md).
+For more info on crack-checker, click [here](./crack-checker/README.md).
 
 ## Content Crawler
 
