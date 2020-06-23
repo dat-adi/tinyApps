@@ -1,5 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Front end window
 import tkinter as tk
 from tkinter import filedialog, Text
+
+# System and File access
 import os
 import pickle
 
