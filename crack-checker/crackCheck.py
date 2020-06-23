@@ -5,7 +5,7 @@
 
 # Owned
 __author__ = "Datta Adithya"
-__credits__ = ["Datta Adithya"]
+__credits__ = ["Datta Adithya", "Vijay Balaji"]
 __license__ = "MIT"
 __maintainer__ = "Datta Adithya"
 __email__ = "dat.adithya@gmail.com"

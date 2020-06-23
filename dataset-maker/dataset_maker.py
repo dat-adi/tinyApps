@@ -1,8 +1,23 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Directory tranversing imports
 from os import listdir
 from os.path import getsize, splitext
+
+# CSV file making
 from csv import writer, DictWriter
 
+'''DSMkr is a simple folder tranverser which identifies the files present in the folder and builds a CSV file to store the information in.'''
 
+# Owned
+__author__ = "Datta Adithya"
+__credits__ = ["Datta Adithya"]
+__license__ = "MIT"
+__maintainer__ = "Datta Adithya"
+__email__ = "dat.adithya@gmail.com"
+
+# Indexes the files present in the particuler folder provided to the program.
 def file_indexer(dir_path, output_path_and_name):
     with open(output_path_and_name, 'w', newline='') as f:
         fieldnames=["File Name", "Extension", "File Type", "Size", "Path"]
@@ -59,6 +74,7 @@ def file_indexer(dir_path, output_path_and_name):
     print("Directories present in the folder are : ", directories_in_folder)
 
 
+# Main
 if __name__ == "__main__":
     directory_path = input("Enter the path to the directory: ")
     output_path = input("Enter the path to extract the csv to: ")
