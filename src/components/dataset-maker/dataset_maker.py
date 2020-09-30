@@ -6,7 +6,7 @@ from os import listdir
 from os.path import getsize, splitext
 
 # CSV file making
-from csv import writer, DictWriter
+from csv import DictWriter
 
 '''DSMkr is a simple folder traversing tool which identifies the files present in the folder
  and builds a CSV file to store the information in.'''
@@ -74,11 +74,11 @@ class mainApp:
                 if getsize(file_name) != 0:
                     wtr.writerow(
                         {
-                            "File Name" : one_file[:one_file.rfind('.')],
-                            "Extension" : splitext(file_name)[1],
-                            "File Type" : file_type,
-                            "Size" : getsize(file_name),
-                            "Path" : file_name
+                            "File Name": one_file[:one_file.rfind('.')],
+                            "Extension": splitext(file_name)[1],
+                            "File Type": file_type,
+                            "Size": getsize(file_name),
+                            "Path": file_name
                         }
                     )
                 else:
