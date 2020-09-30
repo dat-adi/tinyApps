@@ -58,7 +58,8 @@ class mainApp(tk.Tk):
             label.pack()
 
     def add_apps(self):
-        filename = filedialog.askopenfilename(initialdir='/', title="Select App to add", filetypes=(('.exe files', "*.exe"), ("All files", "*.*")))
+        filename = filedialog.askopenfilename(initialdir='/', title="Select App to add",
+                                              filetypes=(('.exe files', "*.exe"), ("All files", "*.*")))
         self.apps.append(filename)
 
     def run_apps(self):
