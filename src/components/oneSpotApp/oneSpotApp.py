@@ -3,14 +3,15 @@
 
 # Front end window
 import tkinter as tk
-from tkinter import filedialog, Text
+from tkinter import filedialog
 
 # System and File access
 import os
-import pickle
 
-"""oneSpotApp.py is a simple one click service that allows you to deploy all the applications that you wish to,
- through a one time setup process."""
+"""
+oneSpotApp.py is a simple one click service that allows you to deploy all
+the applications that you wish to, through a one time setup process.
+"""
 
 # Owned
 __author__ = "Datta Adithya"
@@ -36,7 +37,7 @@ class mainApp(tk.Tk):
 
         # returns the app locations present in the file
         self.apps = apps_in_file()
-        
+
         canvas = tk.Frame(self, height=700, width=700, bg="#DC143C")
         canvas.pack(side="top", fill="both", expand=True)
 
@@ -58,8 +59,11 @@ class mainApp(tk.Tk):
             label.pack()
 
     def add_apps(self):
-        filename = filedialog.askopenfilename(initialdir='/', title="Select App to add",
-                                              filetypes=(('.exe files', "*.exe"), ("All files", "*.*")))
+        filename = filedialog.askopenfilename(initialdir='/',
+                                              title="Select App to add",
+                                              filetypes=(
+                                                  ('.exe files', "*.exe"),
+                                                  ("All files", "*.*")))
         self.apps.append(filename)
 
     def run_apps(self):
@@ -76,4 +80,3 @@ if __name__ == "__main__":
     App = mainApp()
     App.mainloop()
     App.write_to_file()
-
