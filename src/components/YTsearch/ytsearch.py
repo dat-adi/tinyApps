@@ -15,18 +15,27 @@ __license__ = "MIT"
 __maintainer__ = "Datta Adithya"
 __email__ = "dat.adithya@gmail.com"
 
+
+class yts:
+    def __init__(self):
+        ap = ArgumentParser() 
+        # ap.add_arguments take the arguments 
+        ap.add_argument('-s', '--search', help="Enter the search request")
+        args = vars(ap.parse_args()) #creates a dictionary for args to take the search request
+
+        if not args.get("search", False):
+            self.search_query = input("SearchQuery> ")
+        else:
+            self.search_query = args["search"]
+
+    def run_search(self):
+        self.search_query = self.search_query.replace(" ", "+") # replaces the spaces in the url
+        wbopen("https://www.youtube.com/results?search_query={}".format(self.search_query)) #searches for it in youtube
+
+
 # Main
 if __name__ == "__main__":
     print("ytsearch 1.0.0 | tinyApps")
+    test = yts()
+    test.run_search()
 
-    ap = ArgumentParser()
-    ap.add_argument('-s', '--search', help="Enter the search request") #takes the arguments 
-    args = vars(ap.parse_args()) #creates a dictionary for args to take the search request
-
-    if not args.get("search", False):
-        search_query = input("SearchQuery> ")
-    else:
-        search_query = args["search"]
-
-    search_query = search_query.replace(" ", "+") # replaces the spaces in the url
-    wbopen("https://www.youtube.com/results?search_query={}".format(search_query)) #searches for it in youtube
