@@ -22,7 +22,7 @@ class Yts:
     def __init__(self):
         ap = ArgumentParser()
         # ap.add_arguments take the arguments
-        ap.add_argument('-s', '--search', help="Enter the search request")
+        ap.add_argument("-s", "--search", help="Enter the search request")
         # vars creates a dictionary for args to take the search request in.
         args = vars(ap.parse_args())
 
@@ -36,9 +36,8 @@ class Yts:
         self.search_query = self.search_query.replace(" ", "+")
         # performs a search for the query on youtube
         wbopen(
-                "https://www.youtube.com/results?search_query={}"
-                .format(self.search_query)
-                )
+            "https://www.youtube.com/results?search_query={}".format(self.search_query)
+        )
 
 
 # Main

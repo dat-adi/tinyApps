@@ -25,11 +25,11 @@ class mainApp(tk.Tk):
         tk.Tk.__init__(self, *args, **kwargs)
         self.wm_title("One Spot Tabs")
 
-        self.op = webb.get('opera')
+        self.op = webb.get("opera")
         self.url_and_name = {}
 
         if os.path.isfile("tabs"):
-            temp_nu = open('tabs', 'rb')
+            temp_nu = open("tabs", "rb")
             self.url_and_name = pickle.load(temp_nu)
 
         canvas = tk.Canvas(self, height=200, width=700, bg="#336B87")
@@ -41,13 +41,19 @@ class mainApp(tk.Tk):
         top_bar = tk.Label(self, text="oneSpotTabs", bg="#2A3132", fg="White")
         top_bar.pack(fill=tk.X)
 
-        urlInput = tk.Button(self, text="Add Website", padx=10, pady=5, command=self.add_url)
+        urlInput = tk.Button(
+            self, text="Add Website", padx=10, pady=5, command=self.add_url
+        )
         urlInput.pack(side=tk.RIGHT)
 
-        urlExecute = tk.Button(self, text="Run links", padx=10, pady=5, command=self.run_url)
+        urlExecute = tk.Button(
+            self, text="Run links", padx=10, pady=5, command=self.run_url
+        )
         urlExecute.pack(side=tk.RIGHT)
 
-        urlDelete = tk.Button(self, text="Delete link", padx=10, pady=5, command=self.del_url)
+        urlDelete = tk.Button(
+            self, text="Delete link", padx=10, pady=5, command=self.del_url
+        )
         urlDelete.pack(side=tk.RIGHT)
 
         for name, url in self.url_and_name.items():
@@ -76,7 +82,7 @@ class mainApp(tk.Tk):
         del self.url_and_name[to_delete]
 
     def write_to_file(self):
-        pickle.dump(self.url_and_name, open('tabs', 'wb'))
+        pickle.dump(self.url_and_name, open("tabs", "wb"))
 
 
 if __name__ == "__main__":

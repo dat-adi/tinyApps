@@ -22,10 +22,10 @@ __email__ = "dat.adithya@gmail.com"
 
 
 def apps_in_file():
-    if os.path.isfile('save.txt'):
-        with open('save.txt', 'r') as f:
+    if os.path.isfile("save.txt"):
+        with open("save.txt", "r") as f:
             tempApps = f.read()
-            tempApps = tempApps.split(',')
+            tempApps = tempApps.split(",")
             apps = [x for x in tempApps if x.strip()]
     return apps
 
@@ -44,14 +44,26 @@ class mainApp(tk.Tk):
         frame = tk.Frame(self, bg="white")
         frame.place(relwidth=0.8, relheight=0.8, relx=0.1, rely=0.1)
 
-        openFile = tk.Button(self, text="Open File",
-                             padx=10, pady=5, fg="white", bg="#DC143C",
-                             command=self.add_apps)
+        openFile = tk.Button(
+            self,
+            text="Open File",
+            padx=10,
+            pady=5,
+            fg="white",
+            bg="#DC143C",
+            command=self.add_apps,
+        )
         openFile.pack()
 
-        runApps = tk.Button(self, text="Run Apps",
-                            padx=10, pady=5, fg="white", bg="#DC143C",
-                            command=self.run_apps)
+        runApps = tk.Button(
+            self,
+            text="Run Apps",
+            padx=10,
+            pady=5,
+            fg="white",
+            bg="#DC143C",
+            command=self.run_apps,
+        )
         runApps.pack()
 
         for app in self.apps:
@@ -59,11 +71,11 @@ class mainApp(tk.Tk):
             label.pack()
 
     def add_apps(self):
-        filename = filedialog.askopenfilename(initialdir='/',
-                                              title="Select App to add",
-                                              filetypes=(
-                                                  ('.exe files', "*.exe"),
-                                                  ("All files", "*.*")))
+        filename = filedialog.askopenfilename(
+            initialdir="/",
+            title="Select App to add",
+            filetypes=((".exe files", "*.exe"), ("All files", "*.*")),
+        )
         self.apps.append(filename)
 
     def run_apps(self):
@@ -71,9 +83,9 @@ class mainApp(tk.Tk):
             os.startfile(element)
 
     def write_to_file(self):
-        with open('save.txt', 'a') as f:
+        with open("save.txt", "a") as f:
             for element in self.apps:
-                f.write(element + ',')
+                f.write(element + ",")
 
 
 if __name__ == "__main__":

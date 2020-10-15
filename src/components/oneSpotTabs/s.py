@@ -3,19 +3,19 @@ import os
 import pickle
 import argparse
 
-op = webb.get('opera')
+op = webb.get("opera")
 url_and_name = {}
 
 if os.path.isfile("options"):
-    temp_nu = open('options', 'rb')
+    temp_nu = open("options", "rb")
     url_and_name = pickle.load(temp_nu)
 
 ap = argparse.ArgumentParser()
-ap.add_argument('-s', '--search', help="Name of the shortcut")
+ap.add_argument("-s", "--search", help="Name of the shortcut")
 args = vars(ap.parse_args())
 
-if args.get('search', False):
-    op.open(url_and_name[args['search'].lower()])
+if args.get("search", False):
+    op.open(url_and_name[args["search"].lower()])
 else:
     print("1. Add website\n2. Remove website\n3. Select")
     option_pick = int(input("> "))
@@ -30,8 +30,8 @@ else:
         del url_and_name[removal_name]
     elif option_pick == 3:
         for name, url in url_and_name.items():
-            print(name.ljust(20, ' '), url)
+            print(name.ljust(20, " "), url)
         temp_name = input("> ")
         op.open(url_and_name[temp_name.lower()])
 
-    pickle.dump(url_and_name, open('options', 'wb'))
+    pickle.dump(url_and_name, open("options", "wb"))
