@@ -122,3 +122,4 @@ def generate(html_files, novelname, author):
 
     for x in html_files:
         os.remove(x)
+
