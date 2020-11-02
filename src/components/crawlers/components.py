@@ -10,7 +10,7 @@ def download(link, file_name):
     file.close()
 
 
-def clean(file_name_in):
+def clean(file_name_in, file_name_out):
     raw = open(file_name_in, "r", encoding="utf-8")
     soup = BeautifulSoup(raw, "html.parser")
     raw.close()
@@ -27,7 +27,7 @@ def clean(file_name_in):
     text = text.replace(foot, "")
     text = text.lstrip().rstrip()
     text = text.replace("\n", "</p>\n<p>")
-    f = open(chapter_title + ".xhtml", "w", encoding="utf-8")
+    f = open(file_name_out + ".xhtml", "w", encoding="utf-8")
     f.write('<html xmlns="http://www.w3.org/1999/xhtml">')
     f.write("\n<head>")
     f.write("\n<title>" + chapter_title + "</title>")
