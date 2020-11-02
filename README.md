@@ -10,8 +10,8 @@ Tiny programs which can help you keyboard ninjas.
 4. [YTsearch](#ytsearch)
 5. [Crack Checker](#crack-checker)
 
-### Yet to be Added
-6. [ContentCrawler](#content-crawler)
+### In Progress
+6. [EPUB Crawlers](#epub-crawler)
 
 ### Miscellaneous
 - [License](#license)<br>
@@ -54,7 +54,7 @@ A program that checks whether or not a specific game is cracked or not, fed from
 Yet to be completed, a work in progress, trying to use the [API](https://crackwatch.com/api) provided.
 For more info on crack-checker, click [here](./crack-checker/README.md).
 
-## Content Crawler
+## EPUB Crawler
 
 Essentially, a program that insteads to crawl websites and display the content you require, allowing you to download it as well.
 Currently a work in progress, this project was built to crawl webnovel websites for their webnovels.
