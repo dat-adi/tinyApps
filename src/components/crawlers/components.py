@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import os
+import zipfile
 
 
 def download(link, file_name):
@@ -27,7 +28,7 @@ def clean(file_name_in, file_name_out):
     text = text.replace(foot, "")
     text = text.lstrip().rstrip()
     text = text.replace("\n", "</p>\n<p>")
-    f = open(file_name_out + ".xhtml", "w", encoding="utf-8")
+    f = open(file_name_out, "w", encoding="utf-8")
     f.write('<html xmlns="http://www.w3.org/1999/xhtml">')
     f.write("\n<head>")
     f.write("\n<title>" + chapter_title + "</title>")
