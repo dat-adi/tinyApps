@@ -40,15 +40,14 @@ def clean(file_name_in):
     f.write("\n</html>")
     f.close()
     os.remove(file_name_in)
-    return chapter_title
 
 def find_between(file):
     f = open(file, "r", encoding="utf8")
     soup = BeautifulSoup(f, 'html.parser')
     return soup.title
 
-def generate(html_files, novelname, author, chapter_s, chapter_e):
-    epub = zipfile.ZipFile(novelname + "_" + chapter_s + "-" + chapter_e + ".epub", "w")
+def generate(html_files, novelname, author):
+    epub = zipfile.ZipFile(novelname + ".epub", "w")
     epub.writestr("mimetype", "application/epub+zip")
     epub.writestr("META-INF/container.xml", '''<container version="1.0"
     xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
@@ -77,7 +76,7 @@ def generate(html_files, novelname, author, chapter_s, chapter_e):
     <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.idpf.org/2007/opf" ns0:role="aut" ns0:file-as="NaN">%(author)s</dc:creator>
         <meta xmlns:dc="http://purl.org/dc/elements/1.1/" name="calibre:series" content="%(series)s"/>''' \
     % {
-      "novelname": novelname + ": " + chapter_s + "-" + chapter_e, "author": author, "series": novelname}
+      "novelname": novelname, "author": author, "series": novelname}
 
     toc_manifest = '<item href="toc.xhtml" id="toc" properties="nav" media-type="application/xhtml+xml"/>' 
 
