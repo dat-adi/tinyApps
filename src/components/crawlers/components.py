@@ -131,7 +131,7 @@ def generate(html_files, novelname, author):
                     <a href="%s">%s</a>
                     </li>""" % (
             i,
-            html_files[i],
+            os.path.basename(y),
             chapter,
         )
 
@@ -141,5 +141,3 @@ def generate(html_files, novelname, author):
     )
     epub.close()
 
-    for x in html_files:
-        os.remove(x)
