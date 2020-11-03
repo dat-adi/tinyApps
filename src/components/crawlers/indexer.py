@@ -1,21 +1,22 @@
 import requests
 from bs4 import BeautifulSoup
 
+
 def get_chapter_links():
     page = requests.get("https://wanderinginn.com/table-of-contents/").text
     soup = BeautifulSoup(page, "html.parser")
-    contents_tag = soup.find('div', 'entry-content')
-    chapter_links = [link.get('href') for link in contents_tag.find_all('a')]
+    contents_tag = soup.find("div", "entry-content")
+    chapter_links = [link.get("href") for link in contents_tag.find_all("a")]
 
     no_slash_links = []
     double_slash_links = []
 
     for link in chapter_links:
-        if link[-1] != '/':
+        if link[-1] != "/":
             no_slash_links.append(chapter_links.index(link))
         if link[-2:] == "//":
             double_slash_links.append(chapter_links.index(link))
-    
+
     for indice in no_slash_links:
         chapter_links[indice] = chapter_links[indice] + "/"
 
