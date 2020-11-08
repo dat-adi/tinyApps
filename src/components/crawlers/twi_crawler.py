@@ -9,11 +9,8 @@ def web():
 
     output_folder = input("Enter the output folder : ")
 
-    try:
-        link_list = get_chapter_links()
-        set_chapter_file_links(link_list)
-    except:
-        link_list = open("toc.txt", "r").read()
+    link_list = get_chapter_links()
+
     file_list = []
     for x in range(len(link_list)):
         namer = link_list[x][36:-1]

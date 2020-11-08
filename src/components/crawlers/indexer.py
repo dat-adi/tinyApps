@@ -1,3 +1,4 @@
+import pickle
 import requests
 from bs4 import BeautifulSoup
 
@@ -27,9 +28,8 @@ def get_chapter_links():
 
 
 def set_chapter_file_links(chapter_links):
-    with open("toc.txt", "w+") as f:
-        f.write(str(chapter_links))
-        f.close()
+    with open("toc.txt", "wb") as f:
+        pickle.dump(chapter_links, f)
 
 
 if __name__ == "__main__":
