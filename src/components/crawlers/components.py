@@ -29,12 +29,14 @@ def clean(file_name_in, file_name_out):
     text = text.lstrip().rstrip()
     text = text.replace("\n", "</p>\n<p>")
     f = open(file_name_out, "w", encoding="utf-8")
-    f.write('<html xmlns="http://www.w3.org/1999/xhtml">')
+    f.write(
+        '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: https://daisy.org/z3998/2012/vocab/structure/" lang="en" xml:lang="en">'
+    )
     f.write("\n<head>")
     f.write("\n<title>" + chapter_title + "</title>")
     f.write("\n</head>")
-    f.write("\n<body>")
-    f.write("\n<strong>" + chapter_title + "</strong>" + "\n<p>")
+    f.write('\n<body dir="default">')
+    f.write("\n<h1>" + chapter_title + "</h1>" + "\n<p>")
     f.write(text)
     f.write("</p>")
     f.write("\n</body>")
@@ -57,29 +59,27 @@ def generate(html_files, novelname, author):
         """<container version="1.0"
     xmlns="urn:oasis:names:tc:opendocument:xmlns:container">
         <rootfiles>
-            <rootfile full-path="OEBPS/Content.opf" media-type="application/oebps-package+xml"/>
+            <rootfile full-path="OEBPS/content.opf" media-type="application/oebps-package+xml"/>
         </rootfiles>
     </container>""",
     )
 
     index_tpl = """<package version="3.1" xmlns="http://www.idpf.org/2007/opf">
-        <metadata>
-            %(metadata)s
-        </metadata>
-        <manifest>
-            %(manifest)s
-        </manifest>
-        <spine>
-            <itemref idref="toc" linear="no"/>
-            %(spine)s
-        </spine>
-    </package>"""
+    <metadata>
+        %(metadata)s
+    </metadata>
+    <manifest>
+        %(manifest)s
+    </manifest>
+    <spine>
+        <itemref idref="toc" linear="no"/>
+        %(spine)s
+    </spine>
+</package>"""
     manifest = ""
     spine = ""
 
-    metadata = """<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">%(novelname)s</dc:title>
-    <dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.idpf.org/2007/opf" ns0:role="aut" ns0:file-as="NaN">%(author)s</dc:creator>
-        <meta xmlns:dc="http://purl.org/dc/elements/1.1/" name="calibre:series" content="%(series)s"/>""" % {
+    metadata = """<dc:title xmlns:dc="http://purl.org/dc/elements/1.1/">%(novelname)s</dc:title>\n<dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:ns0="http://www.idpf.org/2007/opf" ns0:role="aut" ns0:file-as="NaN">%(author)s</dc:creator>\n<meta xmlns:dc="http://purl.org/dc/elements/1.1/" name="calibre:series" content="%(series)s"/>""" % {
         "novelname": novelname,
         "author": author,
         "series": novelname,
@@ -90,14 +90,14 @@ def generate(html_files, novelname, author):
     for i, html in enumerate(html_files):
         basename = os.path.basename(html)
         manifest += (
-            '<item id="file_%s" href="%s" media-type="application/xhtml+xml"/>'
+            '<item id="file_%s" href="%s" media-type="application/xhtml+xml"/>\n'
             % (i + 1, basename)
         )
         spine += '<itemref idref="file_%s" />' % (i + 1)
         epub.write(html, "OEBPS/" + basename)
 
     epub.writestr(
-        "OEBPS/Content.opf",
+        "OEBPS/content.opf",
         index_tpl
         % {
             "metadata": metadata,
@@ -140,4 +140,3 @@ def generate(html_files, novelname, author):
         toc_start % {"novelname": novelname, "toc_mid": toc_mid, "toc_end": toc_end},
     )
     epub.close()
-
