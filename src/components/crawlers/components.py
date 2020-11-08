@@ -141,5 +141,6 @@ def generate(html_files, novelname, author):
     )
     epub.close()
 
-    for x in html_files:
-        os.remove(x)
+# commented code below as the files do not need to be deleted, in dev mode.
+#    for x in html_files:
+#        os.remove(x)

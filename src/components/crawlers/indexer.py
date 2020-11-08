@@ -26,5 +26,11 @@ def get_chapter_links():
     return chapter_links
 
 
+def set_chapter_file_links(chapter_links):
+    with open("toc.txt", "w+") as f:
+        f.write(str(chapter_links))
+        f.close()
+
+
 if __name__ == "__main__":
-    print(get_chapter_links())
+    set_chapter_file_links(get_chapter_links())
