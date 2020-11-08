@@ -1,0 +1,45 @@
+from indexer import get_chapter_links, set_chapter_file_links
+from bs4 import BeautifulSoup
+from components import download
+import pickle
+
+def offline_tester():
+    try:
+        link_list = get_chapter_links()
+        set_chapter_file_links(link_list)
+    except:
+        with open("toc.txt", "rb") as f:
+            link_list = pickle.load(f)
+            f.close()
+
+
+def clean_children(file_name_in, file_name_out):
+    raw = open(file_name_in, "r", encoding="utf-8")
+    soup = BeautifulSoup(raw, "html.parser")
+    raw.close()
+    chapter_tag = soup.find("article", "post")
+    chapter_title = soup.find('h1', 'entry-title')
+    chapter_title = chapter_title.get_text()
+    text = chapter_tag.findChildren('p')
+    text = text[:-1]
+    text = str(text)
+    text = text[1:-1]
+    text = text.replace("</p>,", "</p>\n")
+    f = open(file_name_out, "w", encoding="utf-8")
+    f.write(
+        '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: https://daisy.org/z3998/2012/vocab/structure/" lang="en" xml:lang="en">'
+    )
+    f.write("\n<head>")
+    f.write("\n<title>" + chapter_title + "</title>")
+    f.write("\n</head>")
+    f.write('\n<body dir="default">')
+    f.write("\n<h1>" + chapter_title + "</h1>")
+    f.write(text)
+    f.write("\n</body>")
+    f.write("\n</html>")
+    f.close()
+    print(text)
+
+
+if __name__ == "__main__":
+    clean_children("soup_tester.txt", "soup_output.xhtml")

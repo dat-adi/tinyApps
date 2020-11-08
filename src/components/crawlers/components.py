@@ -16,18 +16,13 @@ def clean(file_name_in, file_name_out):
     soup = BeautifulSoup(raw, "html.parser")
     raw.close()
     chapter_tag = soup.find("article", "post")
-    text = chapter_tag.get_text()
-    text = text.replace("Previous Chapter", "").replace("Next Chapter", "")
-    text = text.lstrip().rstrip()
-    chapter_title = text.split("\n", 1)[0]
-    text = text.replace(chapter_title, "")
-    text = text.lstrip().rstrip()
-    authored = text.split("\n", 1)[0]
-    text = text.replace(authored, "")
-    foot = "This entry was posted in Writing and tagged fantasy, inn, web novel, web serial, Writing by pirateaba. Bookmark the permalink."
-    text = text.replace(foot, "")
-    text = text.lstrip().rstrip()
-    text = text.replace("\n", "</p>\n<p>")
+    chapter_title = soup.find('h1', 'entry-title')
+    chapter_title = chapter_title.get_text()
+    text = chapter_tag.findChildren('p')
+    text = text[:-1]
+    text = str(text)
+    text = text[1:-1]
+    text = text.replace("</p>,", "</p>\n")
     f = open(file_name_out, "w", encoding="utf-8")
     f.write(
         '<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops" epub:prefix="z3998: https://daisy.org/z3998/2012/vocab/structure/" lang="en" xml:lang="en">'
@@ -36,9 +31,8 @@ def clean(file_name_in, file_name_out):
     f.write("\n<title>" + chapter_title + "</title>")
     f.write("\n</head>")
     f.write('\n<body dir="default">')
-    f.write("\n<h1>" + chapter_title + "</h1>" + "\n<p>")
+    f.write("\n<h1>" + chapter_title + "</h1>")
     f.write(text)
-    f.write("</p>")
     f.write("\n</body>")
     f.write("\n</html>")
     f.close()
@@ -141,5 +135,6 @@ def generate(html_files, novelname, author):
     )
     epub.close()
 
-    for x in html_files:
-        os.remove(x)
+# commented code below as the files do not need to be deleted, in dev mode.
+#    for x in html_files:
+#        os.remove(x)
