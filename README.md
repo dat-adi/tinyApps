@@ -9,8 +9,6 @@ Tiny programs which can help you keyboard ninjas.
 3. [OneSpotTabs](#onespottabs)
 4. [YTsearch](#ytsearch)
 5. [Crack Checker](#crack-checker)
-
-### In Progress
 6. [EPUB Crawlers](#epub-crawler)
 
 ### Miscellaneous
