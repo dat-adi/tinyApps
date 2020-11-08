@@ -140,3 +140,6 @@ def generate(html_files, novelname, author):
         toc_start % {"novelname": novelname, "toc_mid": toc_mid, "toc_end": toc_end},
     )
     epub.close()
+
+    for x in html_files:
+        os.remove(x)
