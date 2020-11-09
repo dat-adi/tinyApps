@@ -8,9 +8,24 @@ def offline_tester():
         link_list = get_chapter_links()
         set_chapter_file_links(link_list)
     except:
-        with open("toc.txt", "rb") as f:
+        with open("assets\\toc", "rb") as f:
             link_list = pickle.load(f)
             f.close()
+
+def update_chapters():
+    try:
+        with open("assets\\toc", "rb") as f:
+            links = pickle.load(f)
+            f.close()
+        link_list = get_chapter_links()
+        if link_list != links:
+            print("New chapters available")
+    except FileNotFoundError as e:
+        print("As file did not exist, we are currently creating the file...")
+        set_chapter_file_links(get_chapter_links())
+        print("File created. Run again.")
+    except Exception as e:
+        print(e)
 
 
 def clean_children(file_name_in, file_name_out):
@@ -42,4 +57,5 @@ def clean_children(file_name_in, file_name_out):
 
 
 if __name__ == "__main__":
-    clean_children("soup_tester.txt", "soup_output.xhtml")
+    #clean_children("soup_tester.txt", "soup_output.xhtml")
+    update_chapters()
