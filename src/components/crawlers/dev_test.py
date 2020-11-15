@@ -20,6 +20,11 @@ def update_chapters():
         link_list = get_chapter_links()
         if link_list != links:
             print("New chapters available")
+            print("Updating chapters now...")
+            set_chapter_file_links(link_list)
+        else:
+            print("Contents up to date")
+
     except FileNotFoundError as e:
         print("As file did not exist, we are currently creating the file...")
         set_chapter_file_links(get_chapter_links())
