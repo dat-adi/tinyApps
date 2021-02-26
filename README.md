@@ -66,6 +66,7 @@ Feel free to contribute to this project, but, be sure to <br>
 - [ ] Fork the repository and work on the issue.
 - [ ] Send a pull request after finishing up on the code.
 - [ ] The code will be reviewed and if all's good, merged into the master branch.
+- [ ] You're done!
 
 ---
 <p align="right"><i>dat-adi</i></p>
