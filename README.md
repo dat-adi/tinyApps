@@ -55,7 +55,8 @@ For more info on crack-checker, click [here](./crack-checker/README.md).
 ## EPUB Crawler
 
 Essentially, a program that insteads to crawl websites and display the content you require, allowing you to download it as well.
-Currently a work in progress, this project was built to crawl webnovel websites for their webnovels.
+Currently a work in progress, this project was built to crawl webnovel websites for their webnovels.<br>
+**Project has been completed as required and has been moved over to another repository.**
 
 ## License
 This project is hosted under the MIT license, and is free to be distributed and shared.
