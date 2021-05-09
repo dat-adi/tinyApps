@@ -3,8 +3,11 @@ import os
 import pickle
 import argparse
 
-op = webb.get("opera")
-url_and_name = {}
+try:
+    op = webb.get("firefox")
+    url_and_name = {}
+except:
+    print("Looks like there's a browser issue")
 
 if os.path.isfile("options"):
     temp_nu = open("options", "rb")
@@ -18,7 +21,7 @@ if args.get("search", False):
     op.open(url_and_name[args["search"].lower()])
 else:
     print("1. Add website\n2. Remove website\n3. Select")
-    option_pick = int(input("> "))
+    option_pick = eval(input("> "))
 
     if option_pick == 1:
         name = input("Enter name : ")
