@@ -1,2 +1,2 @@
-tqdm==4.51.0
+tqdm==4.66.3
 beautifulsoup4==4.9.3
